@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-body">
+      
+      <form [formGroup]="datosForm">
+        <h5 class="card-title">Formulario para agregar certificados</h5>
+
+        <div class="card-group mt-3">
+
+          <div class="card">
+            <div class="card-body">
+
+              <div class="form-group mt-2">
+                <label for="exampleInputEmail1">Nombre asegurado: </label>
+                <input type="text" class="form-control" id="nombre_asegurado" formControlName="nombre_asegurado" />
+              </div>
+
+              <div class="form-group mt-2">
+                <label for="exampleInputEmail1">Número de certificado: </label>
+                <input type="text" class="form-control" id="no_certificado" formControlName="numero_certificado" />
+              </div>
+
+              <div class="form-group mt-2">
+                <label for="selectOption">Selecciona una opción:</label>
+                <select class="form-select" id="selectOption" formControlName="id_motivo_inconveniente">
+                  <option *ngFor="let datos of motivos" value={{datos.id_motivo_inconveniente}}>{{datos.descripcion}}
+                  </option>
+                </select>
+              </div>
+
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <div class="form-group mt-2">
+                <label for="exampleInputEmail1">Número de identidad</label>
+                <input type="text" class="form-control" id="no_identidad" formControlName="identidad" />
+              </div>
+
+              <div class="form-group mt-2">
+                <label for="exampleInputEmail1">Observaciones: </label>
+                <input type="text" class="form-control" id="observaciones" formControlName="observaciones" />
+              </div>
+            </div>
+        </div>
+        </div>
+      </form>
+      <div class="row mt-2">
+        <div class="d-flex justify-content-end">
+          <button type="button" class="btn btn-primary" (click)="enviarDatos()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

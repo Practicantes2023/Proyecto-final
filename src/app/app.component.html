@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/']"
+          >Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/nuevo']">Nuevo certificado</a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/nuevo2']">formulario</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/personaje']">Nuevo componente2</a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/datos']">Inconvenientes</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br />
+
+<router-outlet></router-outlet>
+
+<!-- <a [routerLink]="['/']">principal</a>
+<br> -->
+<!-- <a [routerLink]="['/nuevo']">Ir a Nuevo Componente</a>
+<br> -->
+<!-- <a [routerLink]="['/nuevo2']">Ir a Nuevo Componente2</a> -->
+<!-- <app-nuevo2></app-nuevo2> -->

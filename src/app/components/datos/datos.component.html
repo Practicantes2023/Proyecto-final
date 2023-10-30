@@ -1,0 +1,46 @@
+<div class="container">
+  <h1>Inconvenientes de certificados</h1>
+  <div class="container">
+    <table class="table table-bordered">
+      <thead>
+        <tr style="text-align: center;">
+          <th>Id</th>
+          
+          <th>Inconvenientes</th>
+          <th>Nombre Asegurado</th>
+          <th>No. Identidad</th>
+          <th>No. Certificado</th>
+          <th>Observación</th>
+          <th>Fecha de Ingreso</th>
+          <th>acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let datos of cert.slice((paginaActual - 1) * elementosPorPagina, paginaActual * elementosPorPagina)">
+          <td>{{ datos.id }}</td>
+
+          <td>
+            <span *ngIf="datos.id_motivo_inconveniente === 1">Problemas varios</span>
+            <span *ngIf="datos.id_motivo_inconveniente === 2">Mora</span>
+            <span *ngIf="datos.id_motivo_inconveniente === 3">Pre natales y post natales</span>
+            <span *ngIf="datos.id_motivo_inconveniente === 4">Refrendos declarados sin reclamar</span>
+          </td>
+          <td>{{ datos.nombre_asegurado }}</td>
+          <td>{{ datos.identidad }}</td>
+          <td>{{ datos.numero_certificado }}</td>
+          <td>{{ datos.observaciones }}</td>
+          <td>{{ datos.fecha_ingreso | date }}</td>
+          <td><button type="button" class="btn btn-danger" (click)="confirmacion(datos.id)">Desactivar</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Botón centrado en la parte inferior -->
+  <div class="d-flex justify-content-center fixed-bottom mb-3">
+    <button class="btn btn-primary" (click)="paginaAnterior()" [disabled]="paginaActual === 1">Anterior</button>
+    <button class="btn btn-primary" (click)="paginaSiguiente()" [disabled]="paginaActual === totalPaginas()">Siguiente</button>
+  </div>
+</div>
+  
+
