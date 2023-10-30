@@ -13,6 +13,7 @@ import { PersonajesService } from './services/personajes.service';
 import { DatosComponent } from './components/datos/datos.component';
 
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { Nuevo3Component } from './components/nuevo3/nuevo3.component';
 
 
 
@@ -20,7 +21,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 @NgModule({
   declarations: [
     AppComponent,  
-    NuevoComponent, Nuevo2Component, PersonajesComponent, DatosComponent
+    NuevoComponent, Nuevo2Component, PersonajesComponent, DatosComponent, Nuevo3Component
   ],
   imports: [
     BrowserModule,
